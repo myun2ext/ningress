@@ -5,3 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Portal.create(name: "Shibuya-1", latitude: '35.6581291', longitude: '139.7021334')
