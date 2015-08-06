@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806075030) do
+ActiveRecord::Schema.define(version: 20150806082657) do
 
   create_table "portals", force: :cascade do |t|
     t.string   "name",       null: false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150806075030) do
     t.integer  "life",                   default: 200, null: false
     t.integer  "atk",                    default: 10,  null: false
     t.integer  "def",                    default: 10,  null: false
+    t.integer  "amount",                 default: 0,   null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
