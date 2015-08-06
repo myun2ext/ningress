@@ -1,0 +1,14 @@
+%h1 Nugress
+
+%table
+  %thead
+    %tr
+      %td id
+      %td Name
+      %td Level
+  - User.all.each do |user|
+    %tbody
+      %tr
+        %td= user.id
+        %td= user.name
+        %td= user.level
