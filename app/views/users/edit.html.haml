@@ -1,0 +1,15 @@
+%h1
+  = @user.name
+  = "(Level: " + @user.level.to_s + ")"
+
+= form_for @edit do
+  %table
+    %tr
+      %th Name
+      %td= @user.name
+    %tr
+      %th Level
+      %td= @user.level
+    %tr
+      %th Life
+      %td= @user.life

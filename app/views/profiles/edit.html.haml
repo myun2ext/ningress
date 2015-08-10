@@ -1,0 +1,10 @@
+%h1
+  = @user.name
+  = "(Level: " + @user.level.to_s + ")"
+
+= form_for @user, url: '/profile' do |f|
+  %table
+    %tr
+      %th Name
+      %td=f.text_field :name
+  = f.submit
