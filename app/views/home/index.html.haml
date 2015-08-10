@@ -1,6 +1,9 @@
 %h1 Ningress
 
-- if signed_in?
-  = link_to 'logout', destroy_user_session_path, method: :delete, "data-confirm" => "Are you sure?"
-- else
+- unless signed_in?
   = link_to 'login / sign up', '/users/sign_in'
+- else
+  = link_to 'logout', destroy_user_session_path, method: :delete, "data-confirm" => "Are you sure?"
+
+  - @user = current_user
+  = render 'profiles/show'
