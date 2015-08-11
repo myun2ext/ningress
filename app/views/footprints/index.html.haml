@@ -1,0 +1,25 @@
+%h1 Listing footprints
+
+%table
+  %thead
+    %tr
+      %th Latitude
+      %th Longitude
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @footprints.each do |footprint|
+      %tr
+        %td= footprint.latitude
+        %td= footprint.longitude
+        %td= footprint.user
+        %td= link_to 'Show', footprint
+        %td= link_to 'Edit', edit_footprint_path(footprint)
+        %td= link_to 'Destroy', footprint, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Footprint', new_footprint_path

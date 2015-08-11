@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Latitude:
+  = @footprint.latitude
+%p
+  %b Longitude:
+  = @footprint.longitude
+%p
+  %b User:
+  = @footprint.user
+
+= link_to 'Edit', edit_footprint_path(@footprint)
+\|
+= link_to 'Back', footprints_path
