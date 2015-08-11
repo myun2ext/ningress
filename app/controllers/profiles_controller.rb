@@ -1,4 +1,4 @@
-class ProfilesController < ApplicationController
+class ProfilesController < AuthenticateController
   before_action :set_profile
 
   # GET /profiles/1

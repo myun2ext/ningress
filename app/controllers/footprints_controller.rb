@@ -1,4 +1,4 @@
-class FootprintsController < ApplicationController
+class FootprintsController < AuthenticateController
   before_action :set_footprint, only: [:show, :edit, :update, :destroy]
 
   # GET /footprints
