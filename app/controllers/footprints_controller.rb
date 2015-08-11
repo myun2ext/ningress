@@ -12,19 +12,11 @@ class FootprintsController < AuthenticateController
   def show
   end
 
-  # GET /footprints/new
-  def new
-    @footprint = Footprint.new
-  end
-
-  # GET /footprints/1/edit
-  def edit
-  end
-
   # POST /footprints
   # POST /footprints.json
   def create
     @footprint = Footprint.new(footprint_params)
+    @footprint.user = current_user
 
     respond_to do |format|
       if @footprint.save
@@ -51,24 +43,9 @@ class FootprintsController < AuthenticateController
     end
   end
 
-  # DELETE /footprints/1
-  # DELETE /footprints/1.json
-  def destroy
-    @footprint.destroy
-    respond_to do |format|
-      format.html { redirect_to footprints_url, notice: 'Footprint was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_footprint
-      @footprint = Footprint.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def footprint_params
-      params.require(:footprint).permit(:latitude, :longitude, :user_id)
+      params.require(:footprint).permit(:latitude, :longitude)
     end
 end
