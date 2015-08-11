@@ -12,20 +12,12 @@ class FootprintsController < AuthenticateController
   def show
   end
 
-  # POST /footprints
   # POST /footprints.json
   def create
-    @footprint = Footprint.new(footprint_params)
-    @footprint.user = current_user
-
-    respond_to do |format|
-      if @footprint.save
-        format.html { redirect_to @footprint, notice: 'Footprint was successfully created.' }
-        format.json { render :show, status: :created, location: @footprint }
-      else
-        format.html { render :new }
-        format.json { render json: @footprint.errors, status: :unprocessable_entity }
-      end
+    if MarkFootprint.do(current_user, footprint_params)
+      format.json { render :show, status: :created, location: @footprint }
+    else
+      format.json { render json: @footprint.errors, status: :unprocessable_entity }
     end
   end
 
