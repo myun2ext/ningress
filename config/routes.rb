@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   resources :users, only: [:index, :show]
-  resources :portals
+  resources :portals, only: [:index, :show]
   resource :profile, only: [:show, :edit, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.

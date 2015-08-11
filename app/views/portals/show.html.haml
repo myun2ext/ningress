@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%p
+  %strong Name:
+  = @portal.name
+%p
+  %strong Longitude:
+  = @portal.longitude
+%p
+  %strong Latitude:
+  = @portal.latitude
+
+= link_to 'Back', portals_path
