@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :portals, only: [:index, :show]
   resource :profile, only: [:show, :edit, :update]
+  resource :position, only: [:update]
+
   resources :footprints, expect: [:destroy, :new, :edit]
 
   # The priority is based upon order of creation: first created -> highest priority.
