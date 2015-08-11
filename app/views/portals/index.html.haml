@@ -6,13 +6,15 @@
   %thead
     %tr
       %th Name
-      %th Longitude
       %th Latitude
+      %th Longitude
       %th{:colspan => "3"}
   %tbody
     - @portals.each do |portal|
       %tr
-        %td= portal.name
-        %td= portal.longitude
+        %td=link_to portal.name, |
+          "https://maps.google.co.jp/maps?" + |
+          "q=#{portal.latitude},#{portal.longitude}&iwloc=A", target: "_blank" |
         %td= portal.latitude
+        %td= portal.longitude
         %td= link_to 'Show', portal
