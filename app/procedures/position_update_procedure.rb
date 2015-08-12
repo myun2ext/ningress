@@ -5,6 +5,6 @@ class PositionUpdateProcedure
   end
 
   def do
-    MarkFootprint.do(user, params)
+    MarkFootprint.do(@user, @params)
   end
 end

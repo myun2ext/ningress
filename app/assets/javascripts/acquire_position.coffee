@@ -8,7 +8,7 @@ window.acquire_current_position = () ->
     lat = position.coords.latitude
     lng = position.coords.longitude
     $("#positionLatitude").val(lat)
-    $("#positionLongitude").val(lat)
+    $("#positionLongitude").val(lng)
     $("#positionUpdateForm").submit()
   , ->
     # failed acquire position

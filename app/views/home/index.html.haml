@@ -10,3 +10,11 @@
 
   %br
   = render 'position/acquire'
+
+  - if current_user.footprint
+    %div
+      longitude:
+      = current_user.footprint.longitude
+    %div
+      latitude:
+      = current_user.footprint.latitude
