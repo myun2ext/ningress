@@ -1,4 +1,5 @@
 window.acquire_current_position = () ->
+  $("#footprint").hide()
   $("#acquireButton").hide()
   $("#acquiringMessage").text("acquiring... please wait.")
 
