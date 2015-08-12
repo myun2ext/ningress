@@ -1,5 +1,9 @@
 window.acquire_current_position = () ->
+  $("#acquireButton").hide()
+  $("#acquiringMessage").text("acquiring... please wait.")
+
   navigator.geolocation.getCurrentPosition (position) ->
+    $("#acquiringMessage").text("submitting!")
     # Successfly acquire position
     lat = position.coords.latitude
     lng = position.coords.longitude

@@ -1,6 +1,7 @@
-%button{ onclick: 'acquire_current_position()' }
+%button#acquireButton{ onclick: 'acquire_current_position()' }
   Acquire Current Position
+%p#acquiringMessage
 
-= form_tag '/position', method: :put do
+= form_tag '/position', method: :put, id: "positionUpdateForm" do
   %input#positionLatitude{ type: :hidden, name: :latitude }
   %input#positionLongitude{ type: :hidden, name: :longitude }
