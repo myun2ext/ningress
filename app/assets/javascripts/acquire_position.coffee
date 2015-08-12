@@ -3,8 +3,11 @@ window.acquire_current_position = () ->
     # Successfly acquire position
     lat = position.coords.latitude
     lng = position.coords.longitude
-    console.log(lat)
-    console.log(lng)
+    $.post '/position', {
+      _method: "put"
+      latitude:  position.coords.latitude
+      longitude: position.coords.longitude
+    }
   , ->
     # failed acquire position
     console.log "failed"
