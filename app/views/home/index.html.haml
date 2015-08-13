@@ -22,3 +22,7 @@
       %div
         localtion:
         = current_user.footprint.location
+      %div
+        %strong
+          Updated:
+          =l current_user.footprint.updated_at.in_time_zone('Asia/Tokyo')
