@@ -9,4 +9,9 @@ class PositionsController < AuthenticateController
     procedure.do
     redirect_to '/'
   end
+
+  private
+  def update_params
+    params.permit(:latitude, :longitude, :location)
+  end
 end

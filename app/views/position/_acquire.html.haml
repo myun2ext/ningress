@@ -5,3 +5,4 @@
 = form_tag '/position', method: :put, id: "positionUpdateForm" do
   %input#positionLatitude{ type: :hidden, name: :latitude }
   %input#positionLongitude{ type: :hidden, name: :longitude }
+  %input#positionAddress{ type: :hidden, name: :location }

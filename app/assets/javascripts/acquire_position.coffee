@@ -4,13 +4,22 @@ window.acquire_current_position = () ->
   $("#acquiringMessage").text("acquiring... please wait.")
 
   navigator.geolocation.getCurrentPosition (position) ->
-    $("#acquiringMessage").text("submitting!")
     # Successfly acquire position
+    $("#acquiringMessage").text("acquire location address...")
     lat = position.coords.latitude
     lng = position.coords.longitude
-    $("#positionLatitude").val(lat)
-    $("#positionLongitude").val(lng)
-    $("#positionUpdateForm").submit()
+    geocoder = new google.maps.Geocoder()
+    latLng = new google.maps.LatLng(lat,lng)
+
+    geocoder.geocode latLng: latLng, (results, status) ->
+      if (status == google.maps.GeocoderStatus.OK)
+        address = results[1].formatted_address
+        $("#acquiringMessage").text("submitting!")
+        $("#positionLatitude").val(lat)
+        $("#positionLongitude").val(lng)
+        $("#positionAddress").val(address)
+        $("#positionUpdateForm").submit()
+
   , ->
     # failed acquire position
     console.log "failed"
