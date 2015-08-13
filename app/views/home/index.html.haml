@@ -26,3 +26,7 @@
         %strong
           Updated:
           =l current_user.footprint.updated_at.in_time_zone('Asia/Tokyo')
+
+  %h2 Logs
+  %p
+    = simple_format current_user.footprint.logs
